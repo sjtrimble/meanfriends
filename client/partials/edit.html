@@ -1,0 +1,6 @@
+<form name="friendUpdateForm" ng-submit="update()">
+    <input type="text" ng-model="friend.firstName" name="firstName" value="{{ friend.firstName }}"><label>First Name</label>
+    <input type="text" ng-model="friend.lastName" name="lastName" value="{{ friend.lastName }}"><label>Last Name</label>
+    <input type="date" ng-model="friend.birthday" name="birthday" value="{{ friend.birthday }}"><label>Birthday</label>
+    <input type="submit" value="Update">
+</form>

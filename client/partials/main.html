@@ -1,0 +1,21 @@
+<div ng-show="friends.length == 0 || friends == undefined">You have no friends yet!</div>
+<div class="mainContent" ng-show="friends.length > 0">
+    <table>
+        <tr>
+            <th class="nameColumn">Name</th>
+            <th class="buttonColumn">Show</th>
+            <th class="buttonColumn">Update</th>
+            <th class="buttonColumn">Delete</th>
+        </tr>
+        <tr ng-repeat="friend in friends  | filter:searchText">
+            <td>{{ friend.firstName }} {{ friend.lastName }}</td>
+            <td><a href="#!/friends/show/{{ friend._id }}"><button class="showButton">show</button></a></td>
+            <td><a href="#!/friends/edit/{{ friend._id }}"><button class="editButton">edit</button></a</td>
+            <td><button class="deleteButton" ng-click="delete(friend._id)">delete</button></a</td>
+        </tr>
+    </table>
+</div>
+<div class="subContent">
+    <p><input class="friendFilter" type="text" ng-model="searchText" placeholder="Filter: Birthday!"></p>
+    <p><button><a href="#!/friends/new">New Friend</a></button></p>
+</div>
