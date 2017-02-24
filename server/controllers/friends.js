@@ -78,7 +78,7 @@ module.exports = {
 
     show: function(req, res) {
         console.log("server running show functions")
-        Friend.find({_id: req.params.id}, function(err, data){
+        Friend.findOne({_id: req.params.id}, function(err, data){
             if (err) {
                 console.log("error in finding friend from show")
                 res.json(err);

@@ -18,9 +18,10 @@ app.factory('FriendsFactory', ['$http', function($http) {
         // console.log("****** path:", path, "*********");
         $http.get(path)
         .then(function(data) {
+            data.data.birthday = data.data.birthday.substr(0,10);
             if (typeof(callback) == 'function') {
                 // console.log("data.data back from server: ", data.data)
-                callback(data.data[0]);
+                callback(data.data);
             };
         });
     };
